@@ -2,7 +2,7 @@
 const mongoose=require('mongoose');
 const winston=require('winston');
 module.exports = () => {
-    mongoose.connect('mongodb://localhost/WAMIA',{
+    mongoose.connect('mongodb://localhost/e-commerce-vol',{
         useNewUrlParser:true,
         useFindAndModify:true,
         useUnifiedTopology:true,
