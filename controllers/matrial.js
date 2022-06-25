@@ -1,7 +1,6 @@
 
 const { Matrial } = require('../models/matrial');
-const _ = require('lodash');
-exports.createMatrial = async (req, res) => {
+ exports.createMatrial = async (req, res) => {
     try {
         let promo = { rate: 0, price: 0 };
       if (parseFloat(req.body.promo) > 0) {

@@ -7,7 +7,7 @@ const categorieSchema = new Schema({
       },
       slug: {
         type: String,
-        required: true,
+      
       },
 }) 
 const Categorie = mongoose.model('Categorie', categorieSchema);

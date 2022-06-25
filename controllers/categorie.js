@@ -1,18 +1,21 @@
 
 const { Categorie } = require('../models/categorie');
-const _ = require('lodash');
+const slugify = require("slugify");
+
 exports.createCategorie = async (req, res) => {
-    try {
+
+    try {    
         const new_catalog = new Categorie({
             name: req.body.name,
-            slug: slugify(req.body.name),
+            slug: slugify(req.body.name)
         })
 
-        const new_catalogs = await new_catalog.save();
+         const new_catalogs = await new_catalog.save();
         res.status(200).send({ status: true, result: new_catalog });
     }
     catch (err) {
-        res.status(500).send("Somthing failed.");
+
+        res.status(500).send({error:err,message:"Somthing failed."});
 
     }
 }
